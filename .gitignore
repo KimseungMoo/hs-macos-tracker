@@ -1,0 +1,31 @@
+.DS_Store
+.env
+.env.*
+*.pem
+*.p12
+*.cer
+*.mobileprovision
+
+# Xcode / Swift
+DerivedData/
+build/
+*.xcuserstate
+*.xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+timeline.xctimeline
+playground.xcworkspace
+
+# Logs and local game data
+*.log
+Power.log
+Arena.log
+LoadingScreen.log
+*.ips
+
+# Secrets and local dumps
+certs/
+*.key
+hsreplay*.json
+heartharena*dump*
