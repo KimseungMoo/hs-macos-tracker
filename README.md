@@ -13,6 +13,7 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 - [docs/policy.md](docs/policy.md) — 금지 행위와 공개 배포 게이트
 - [docs/research.md](docs/research.md) — Mac 기존 툴 한계
 - [docs/data/2026-08-24/](docs/data/2026-08-24/) — 2026-08-24 지하 투기장 실시간 픽에 쓴 학습 데이터
+- [docs/data/2026-08-25/](docs/data/2026-08-25/) — 2026-08-25 DH 지하 투기장 픽 로그
 - [history/2026-08-25_review_design.md](history/2026-08-25_review_design.md) — 설계 검토와 P0/P1 반영
 - `Core/` — LogReader, GameState, Visibility (SwiftPM)
 
@@ -26,10 +27,10 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 
 ## 데이터 출처 고지
 
-`docs/data/2026-08-24/`는 그날 픽 조언에 쓴 **요약과 픽 로그**다.
+`docs/data/2026-08-24/`와 `docs/data/2026-08-25/`는 그날 픽 조언에 쓴 **요약과 픽 로그**다.
 
-- 직업 승률: [HSReplay Underground Arena](https://hsreplay.net/arena/) Last 1 Day (2026-08-24)
-- 카드 점수: [HearthArena tierlist](https://www.heartharena.com/tierlist) (같은 날)
+- 직업 승률: [HSReplay Underground Arena](https://hsreplay.net/arena/) Last 1 Day (2026-08-24). 08-25 히어로 픽도 이 창을 씀
+- 카드 점수: [HearthArena tierlist](https://www.heartharena.com/tierlist)
 - 포맷: [Hearthstone Wiki Arena](https://hearthstone.wiki.gg/wiki/Arena) Season 47
 
 제3자 점수표 전체는 재배포하지 않는다. 앱 런타임도 HSReplay/HearthArena를 스크래핑하지 않는다.
