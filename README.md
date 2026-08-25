@@ -12,6 +12,7 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 - [docs/policy.md](docs/policy.md) — 금지 행위와 공개 배포 게이트
 - [docs/research.md](docs/research.md) — Mac 기존 툴 한계
 - [docs/data/2026-08-24/](docs/data/2026-08-24/) — 2026-08-24 지하 투기장 실시간 픽에 쓴 학습 데이터
+- [history/2026-08-25_review_design.md](history/2026-08-25_review_design.md) — 설계 검토와 P0/P1 반영
 
 ## 목표
 

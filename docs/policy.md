@@ -15,11 +15,15 @@
 ## 허용하는 입력
 
 - 읽기 전용 로그 tail (`Power.log`, `Arena.log`, `LoadingScreen.log`)
+- `log.config`에 `[Power]`, `[Arena]`, `[LoadingScreen]`만 merge 생성. 기존 섹션은 유지. Verbose 없음. 로그 파일은 삭제·truncate하지 않음
 - 사용자가 보낸 카드 이름 또는 수동 수정
-- ScreenCaptureKit + Vision OCR (화면 기록 거부 시 수동 입력으로 동작)
+- ScreenCaptureKit + Vision OCR. Screen Recording은 OCR을 켤 때만 요청. 거부 시 수동 입력으로 동작
 - 권리와 TTL을 확인한 뒤 adapter 뒤의 Blizzard API / HearthstoneJSON
+- 사용자가 가져온 로컬 점수 파일. 앱이 HSReplay / HearthArena를 긁지 않음
 
-인플레이 조언은 visibility filter를 통과한 공개 상태만 쓴다.
+인플레이 조언은 visibility filter를 통과한 공개 상태만 쓴다. BattleTag, account hi/lo 등 계정 식별자는 섭취 즉시 폐기하고 저장하지 않는다.
+
+Accessibility, Automation, Full Disk Access는 요청하지 않는다.
 
 ## 수익
 
@@ -31,7 +35,7 @@ Blizzard API 데이터는 광고·홍보·타기팅에 쓰지 않는다.
 
 ## 배포 게이트
 
-개인용 프로토타입은 진행한다. 아래는 서면 승인 전 공개 배포를 막는다.
+개인용 프로토타입은 진행한다. 소스가 공개돼 있어도 Release 바이너리에서 아래는 기본 OFF다. 서면 승인 전 공개 배포를 막는다.
 
 - 투기장 추천
 - 특정 카드·대상·순서를 제안하는 처방형 인플레이 조언
