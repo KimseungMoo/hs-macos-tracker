@@ -9,6 +9,7 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 ## 지금 있는 것
 
 - [docs/design.md](docs/design.md) — 아키텍처와 구현 단계
+- [docs/ideas.md](docs/ideas.md) — 추가 기능 아이디어 (미구현)
 - [docs/policy.md](docs/policy.md) — 금지 행위와 공개 배포 게이트
 - [docs/research.md](docs/research.md) — Mac 기존 툴 한계
 - [docs/data/2026-08-24/](docs/data/2026-08-24/) — 2026-08-24 지하 투기장 실시간 픽에 쓴 학습 데이터
