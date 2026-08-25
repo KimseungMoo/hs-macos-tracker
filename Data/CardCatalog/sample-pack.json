@@ -1,0 +1,99 @@
+{
+  "build": "216414",
+  "cards": [
+    {
+      "id": "CS2_029",
+      "dbfId": 315,
+      "name": { "enUS": "Fireball", "koKR": "화염구" },
+      "cost": 4,
+      "type": "SPELL",
+      "cardClass": "MAGE",
+      "rarity": "FREE",
+      "mechanics": [],
+      "text": "Deal $6 damage."
+    },
+    {
+      "id": "CS2_024",
+      "dbfId": 662,
+      "name": { "enUS": "Frostbolt", "koKR": "얼음 화살" },
+      "cost": 2,
+      "type": "SPELL",
+      "cardClass": "MAGE",
+      "rarity": "FREE",
+      "mechanics": ["FREEZE"],
+      "text": "Deal $3 damage. Freeze the target."
+    },
+    {
+      "id": "EX1_116",
+      "dbfId": 559,
+      "name": { "enUS": "Leeroy Jenkins", "koKR": "리로이 젠킨스" },
+      "cost": 5,
+      "type": "MINION",
+      "cardClass": "NEUTRAL",
+      "rarity": "LEGENDARY",
+      "attack": 6,
+      "health": 2,
+      "mechanics": ["CHARGE", "BATTLECRY"],
+      "text": "Charge. Battlecry: Summon two 1/1 Whelps for your opponent."
+    },
+    {
+      "id": "EX1_295",
+      "dbfId": 192,
+      "name": { "enUS": "Ice Block", "koKR": "얼음 방패" },
+      "cost": 3,
+      "type": "SPELL",
+      "cardClass": "MAGE",
+      "rarity": "EPIC",
+      "mechanics": ["SECRET"],
+      "text": "Secret: When your hero takes fatal damage, prevent it."
+    },
+    {
+      "id": "REV_840",
+      "dbfId": 79482,
+      "name": { "enUS": "Deathborne", "koKR": "죽음의 혈통" },
+      "cost": 6,
+      "type": "SPELL",
+      "cardClass": "MAGE",
+      "rarity": "RARE",
+      "mechanics": [],
+      "text": ""
+    },
+    {
+      "id": "KAR_062",
+      "dbfId": 39554,
+      "name": { "enUS": "Netherspite Historian", "koKR": "황천의 원령 역사가" },
+      "cost": 2,
+      "type": "MINION",
+      "cardClass": "NEUTRAL",
+      "rarity": "COMMON",
+      "attack": 1,
+      "health": 3,
+      "mechanics": ["BATTLECRY", "DISCOVER"],
+      "text": "Battlecry: If you're holding a Dragon, Discover a Dragon."
+    },
+    {
+      "id": "VAC_001",
+      "dbfId": 90001,
+      "name": { "enUS": "Nightcloak Sanctum", "koKR": "어둠망토 성소" },
+      "cost": 3,
+      "type": "MINION",
+      "cardClass": "MAGE",
+      "rarity": "LEGENDARY",
+      "attack": 3,
+      "health": 4,
+      "mechanics": [],
+      "text": ""
+    },
+    {
+      "id": "VAC_002",
+      "dbfId": 90002,
+      "name": { "enUS": "Cold Case", "koKR": "미제 사건" },
+      "cost": 4,
+      "type": "SPELL",
+      "cardClass": "MAGE",
+      "rarity": "RARE",
+      "mechanics": [],
+      "text": "Draw two cards."
+    }
+  ]
+}

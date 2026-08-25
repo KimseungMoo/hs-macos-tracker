@@ -9,15 +9,13 @@
 
 정책 상세는 [policy.md](policy.md).
 
-## 이 Mac의 툴체인 (2026-08-24)
+## 툴체인
 
-- Xcode.app 없음
-- Command Line Tools 16.4 + Swift 6.1.2
-- `xcodebuild` 불가 (`xcode-select`가 CLT를 가리킴)
+App/ 로컬 빌드 기준은 **Xcode 26.0.1**. Apple Developer Program은 로컬 빌드에 필요 없다.
 
-네이티브 SwiftUI/AppKit `.app` 빌드는 무료 Xcode가 필요하다. App Store에서 받으면 되고 Apple Developer Program($99)은 로컬 빌드에 필요 없다.
+2026-08-24 기록: 이 Mac에 Xcode.app이 없고 CLT 16.4 + Swift 6.1.2만 있었다. `Core/*`와 `hs-core`는 그 경로로 SwiftPM (`swift test`) 한다. 클라우드 에이전트는 Linux라 `xcodebuild`가 없다.
 
-CLT의 `swift build`는 라이브러리/CLI용이다. 첫 코드는 `Core/*`를 SwiftPM 패키지로 두고 `swift test`로 검증한다. `App/` SwiftUI·AppKit 타깃은 Xcode 설치 이후로 미룬다. Electron/Tauri는 Xcode 없이 개발 가능하나 MVP 경로가 아니다.
+`App/` SwiftUI·AppKit 타깃은 Xcode 26.0.1에서 연다. Electron/Tauri는 MVP 경로가 아니다.
 
 ## 공개·수익 모델
 
@@ -29,7 +27,7 @@ CLT의 `swift build`는 라이브러리/CLI용이다. 첫 코드는 `Core/*`를 
 
 ## 최소 아키텍처
 
-- `App/`: SwiftUI 설정·상태 UI와 AppKit 클릭스루 `NSPanel` 오버레이. Xcode 이후.
+- `App/`: SwiftUI 설정·상태 UI와 AppKit 클릭스루 `NSPanel` 오버레이. Xcode 26.0.1.
 - `Core/LogReader/`: `Power.log`, `Arena.log`, `LoadingScreen.log`를 삭제·truncate 없이 읽는 tailer. rotation, 재접속, 부분 라인 처리
 - `Core/GameState/`: typed event와 순수 reducer
 - `Core/Visibility/`: 추천·UI·저장소 앞에서 비공개 필드 제거
@@ -51,7 +49,7 @@ HSTracker에서 가져오는 것은 MIT 덱스트링과 로그 문법뿐이다. 
 1. **기술 스파이크**
    - `log.config` merge, 로그 위치·빌드 감지, 읽기 전용 tailing. 수락은 경로 입증만
    - 투기장 3장은 수동 입력이 1순위. OCR은 보조. 화면 기록 거부·오인식이면 수동
-   - `App/` 오버레이는 Xcode 이후. 그 전엔 `Core/*`만
+   - `App/` 오버레이는 Xcode 26.0.1. 그 전엔 `Core/*`만
 2. **덱 트래커 MVP**
    - 덱 코드 import, 내 덱 잔여, 공개된 상대 카드, 턴·마나·공개 보드
    - 로그 누락·재접속·미지원 빌드는 추정하지 않고 `unknown`

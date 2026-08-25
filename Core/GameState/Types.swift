@@ -35,9 +35,40 @@ public enum Side: String, Sendable {
     }
 }
 
+public enum CardType: String, Sendable {
+    case hero = "HERO"
+    case minion = "MINION"
+    case spell = "SPELL"
+    case weapon = "WEAPON"
+    case heroPower = "HERO_POWER"
+    case player = "PLAYER"
+    case unknown
+
+    public static func parse(_ raw: String) -> CardType {
+        CardType(rawValue: raw.uppercased()) ?? .unknown
+    }
+}
+
 public enum BuildRef: Equatable, Sendable {
     case unknown
     case pinned(String)
+
+    public var pinnedValue: String? {
+        if case .pinned(let value) = self { return value }
+        return nil
+    }
+}
+
+public struct DeckCard: Equatable, Sendable {
+    public var dbfId: Int
+    public var cardID: String?
+    public var count: Int
+
+    public init(dbfId: Int, cardID: String? = nil, count: Int) {
+        self.dbfId = dbfId
+        self.cardID = cardID
+        self.count = count
+    }
 }
 
 public enum DraftSource: String, Sendable {
@@ -95,7 +126,9 @@ public enum RawEvent: Equatable, Sendable {
     case showEntity(id: Int, cardID: String)
     case tag(entityID: Int, name: String, value: String)
     case tagChange(entityID: Int?, name: String, value: String)
+    case arenaReset
     case arenaCard(String)
+    case arenaPick(String)
     case build(String)
 }
 
@@ -106,6 +139,14 @@ public struct Entity: Equatable, Sendable {
     public var controllerID: Int?
     public var isSecret: Bool
     public var publiclyRevealed: Bool
+    public var cardType: CardType
+    public var cost: Int?
+    public var attack: Int?
+    public var health: Int?
+    public var damage: Int?
+    public var resources: Int?
+    public var resourcesUsed: Int?
+    public var isCurrentPlayer: Bool
 
     public init(
         id: Int,
@@ -113,7 +154,15 @@ public struct Entity: Equatable, Sendable {
         zone: Zone = .unknown,
         controllerID: Int? = nil,
         isSecret: Bool = false,
-        publiclyRevealed: Bool = false
+        publiclyRevealed: Bool = false,
+        cardType: CardType = .unknown,
+        cost: Int? = nil,
+        attack: Int? = nil,
+        health: Int? = nil,
+        damage: Int? = nil,
+        resources: Int? = nil,
+        resourcesUsed: Int? = nil,
+        isCurrentPlayer: Bool = false
     ) {
         self.id = id
         self.cardID = cardID
@@ -121,5 +170,18 @@ public struct Entity: Equatable, Sendable {
         self.controllerID = controllerID
         self.isSecret = isSecret
         self.publiclyRevealed = publiclyRevealed
+        self.cardType = cardType
+        self.cost = cost
+        self.attack = attack
+        self.health = health
+        self.damage = damage
+        self.resources = resources
+        self.resourcesUsed = resourcesUsed
+        self.isCurrentPlayer = isCurrentPlayer
+    }
+
+    public var remainingHealth: Int? {
+        guard let health else { return nil }
+        return health - (damage ?? 0)
     }
 }
