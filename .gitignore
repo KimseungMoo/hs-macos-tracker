@@ -9,6 +9,8 @@
 # Xcode / Swift
 DerivedData/
 build/
+.build/
+.swiftpm/
 *.xcuserstate
 *.xcuserdata/
 *.moved-aside
