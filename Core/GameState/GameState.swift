@@ -4,19 +4,22 @@ public struct GameState: Equatable, Sendable {
     public var turn: Int?
     public var build: BuildRef
     public var draft: DraftState
+    public var decklist: [DeckCard]
 
     public init(
         entities: [Int: Entity] = [:],
         friendlyControllerID: Int? = nil,
         turn: Int? = nil,
         build: BuildRef = .unknown,
-        draft: DraftState = DraftState()
+        draft: DraftState = DraftState(),
+        decklist: [DeckCard] = []
     ) {
         self.entities = entities
         self.friendlyControllerID = friendlyControllerID
         self.turn = turn
         self.build = build
         self.draft = draft
+        self.decklist = decklist
     }
 
     public func applying(_ event: RawEvent) -> GameState {
@@ -46,8 +49,14 @@ public struct GameState: Equatable, Sendable {
             } else if name.uppercased() == "TURN" {
                 next.turn = Int(value)
             }
+        case .arenaReset:
+            next.draft.offered = []
         case .arenaCard(let card):
             next.draft.offered.append(
+                DraftCard(nameOrID: card, source: .arenaLog, confidence: .low)
+            )
+        case .arenaPick(let card):
+            next.draft.picked.append(
                 DraftCard(nameOrID: card, source: .arenaLog, confidence: .low)
             )
         case .build(let build):
@@ -59,6 +68,12 @@ public struct GameState: Equatable, Sendable {
     public func applyingManualDraft(_ cards: [String]) throws -> GameState {
         var next = self
         next.draft = try DraftInput.manual(cards)
+        return next
+    }
+
+    public func applyingDecklist(_ cards: [DeckCard]) -> GameState {
+        var next = self
+        next.decklist = cards
         return next
     }
 
@@ -76,6 +91,22 @@ public struct GameState: Equatable, Sendable {
             entity.isSecret = value == "1" || value.lowercased() == "true"
         case "TURN":
             turn = Int(value)
+        case "CARDTYPE":
+            entity.cardType = CardType.parse(value)
+        case "COST":
+            entity.cost = Int(value)
+        case "ATK":
+            entity.attack = Int(value)
+        case "HEALTH":
+            entity.health = Int(value)
+        case "DAMAGE":
+            entity.damage = Int(value)
+        case "RESOURCES":
+            entity.resources = Int(value)
+        case "RESOURCES_USED":
+            entity.resourcesUsed = Int(value)
+        case "CURRENT_PLAYER":
+            entity.isCurrentPlayer = value == "1" || value.lowercased() == "true"
         default:
             break
         }

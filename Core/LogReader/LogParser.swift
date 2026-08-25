@@ -56,6 +56,13 @@ public struct LogParser: Sendable {
     }
 
     private func parseArena(_ body: String) -> [RawEvent] {
+        let lower = body.lowercased()
+        if lower.contains("onbegin") || lower.contains("onstartdraft") || lower.contains("redraft") {
+            return [.arenaReset]
+        }
+        if lower.contains("onchosen"), let cardID = Scan.cardID(body) {
+            return [.arenaPick(cardID)]
+        }
         if let cardID = Scan.cardID(body) {
             return [.arenaCard(cardID)]
         }

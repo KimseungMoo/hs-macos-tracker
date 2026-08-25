@@ -14,6 +14,8 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 - [docs/data/2026-08-24/](docs/data/2026-08-24/) — 2026-08-24 지하 투기장 실시간 픽에 쓴 학습 데이터
 - [history/2026-08-25_review_design.md](history/2026-08-25_review_design.md) — 설계 검토와 P0/P1 반영
 - `Core/` — LogReader, GameState, Visibility (SwiftPM)
+- `Data/CardCatalog`, `Features/{Tracker,Arena,Advice}` — 덱 잔여·투기장 휴리스틱·결정론 조언
+- `hs-core` — Xcode 없이 로그 파일을 읽는 CLI
 
 ## 목표
 
@@ -39,9 +41,12 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 
 ```
 swift test
+swift run hs-core --catalog Data/CardCatalog/sample-pack.json --pick '화염구|얼음 화살|얼음 방패'
 ```
 
-Electron/Tauri는 MVP 경로가 아니다.
+투기장 추천은 `--enable-arena`와 핀된 build(예: `--loading`)가 있어야 켜진다. 처방형 조언은 `--enable-prescriptive`. 둘 다 기본 OFF.
+
+Electron/Tauri는 MVP 경로가 아니다. `App/` 오버레이는 Xcode 이후다.
 
 ## 라이선스
 
