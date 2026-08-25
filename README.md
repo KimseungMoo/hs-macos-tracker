@@ -2,7 +2,7 @@
 
 Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계와 학습 스냅샷.
 
-지금은 **문서만** 있다. 앱 코드, 바이너리, Xcode 프로젝트는 아직 없다.
+`Core/` SwiftPM 라이브러리가 있다. `App/` SwiftUI 오버레이와 Xcode 프로젝트는 아직 없다.
 
 이 프로젝트는 Blizzard의 공식 제품이 아니다.
 
@@ -13,6 +13,7 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 - [docs/research.md](docs/research.md) — Mac 기존 툴 한계
 - [docs/data/2026-08-24/](docs/data/2026-08-24/) — 2026-08-24 지하 투기장 실시간 픽에 쓴 학습 데이터
 - [history/2026-08-25_review_design.md](history/2026-08-25_review_design.md) — 설계 검토와 P0/P1 반영
+- `Core/` — LogReader, GameState, Visibility (SwiftPM)
 
 ## 목표
 
@@ -34,9 +35,13 @@ Apple Silicon Mac용 Hearthstone 덱 트래커·투기장 조언 앱의 설계�
 
 ## 빌드 상태
 
-이 Mac에는 Xcode.app이 없고 Command Line Tools + Swift 6.1.2만 있다.
+네이티브 SwiftUI/AppKit `.app`은 Xcode가 필요하다. 이 저장소의 첫 코드는 `Core/*`이며 Xcode 없이 `swift test`로 돌린다.
 
-네이티브 SwiftUI/AppKit `.app`은 무료 Xcode가 필요하다. `swift build`는 라이브러리/CLI용이다. Electron/Tauri는 MVP 경로가 아니다.
+```
+swift test
+```
+
+Electron/Tauri는 MVP 경로가 아니다.
 
 ## 라이선스
 
