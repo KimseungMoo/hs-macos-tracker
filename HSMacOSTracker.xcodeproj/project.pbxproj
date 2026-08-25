@@ -1,0 +1,164 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43F15CE835CF4B12BEE17884 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11427C502EAA48AE9DEDFD75 /* AppModel.swift */; };
+		ED32654C21724FFB8AF5FE1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB513C08C04774B5B9D732 /* ContentView.swift */; };
+		31F4AA527CD24A4D828CBD8E /* HSMacOSTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C741ECEFAD4398B91493C3 /* HSMacOSTrackerApp.swift */; };
+		4E729D2C99A447F9BDC80D8D /* OverlayPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E834771974D3A8EEFBB64 /* OverlayPanelController.swift */; };
+		FA37B7666BCD437EAA7A8164 /* Deckstring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E8E02F1AD94C48AF7C20AB /* Deckstring.swift */; };
+		4B8CA4F7FDB945B88603E29D /* DrawOdds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2266401D67D4DD3BD6ECFB2 /* DrawOdds.swift */; };
+		85C60EA5A72444B7BCF784BE /* GameBuildDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AE51541C40413185D81FC1 /* GameBuildDetector.swift */; };
+		25B7517F1C65412894D1D904 /* GameEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6FAAA54154D42ADE849AD /* GameEvent.swift */; };
+		340B182CDB7C457CB24BD4AC /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC993E3A07E4B5EB2B60760 /* MatchState.swift */; };
+		EA1213DB6364493CB1E05D6E /* PowerLogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4AAB49E634740BD521423 /* PowerLogParser.swift */; };
+		48BDC8D9B6484CEBA1D7B757 /* LogLineBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE493651998C4A02BE376A4C /* LogLineBuffer.swift */; };
+		0C7144A6776C44E8900D0E2A /* LogPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D12B01D164B338A5FBDAE /* LogPaths.swift */; };
+		0A3F409E1A344EB1AEACA940 /* LogTailReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAA2D4826D43E7A59EE2BB /* LogTailReader.swift */; };
+		F4E2418038AC44099C85578F /* MultiLogTailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70915570EF2C48C286E10A9A /* MultiLogTailService.swift */; };
+		17C0933EB53A4FD39C41ECD5 /* GameWindowLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A8402B8FF4248B455F75E /* GameWindowLocator.swift */; };
+		F59B708461264828BDCC6F70 /* OverlayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83C9AE19564527976C868C /* OverlayLayout.swift */; };
+		16FF9A99C8F34497AC6237FD /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF46E9098C64A9387BAE558 /* FeatureFlags.swift */; };
+		56263E0F024A4A888EC6F28E /* PublicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300ECD1273304E8089D55B92 /* PublicView.swift */; };
+		4F30141AA5324FE382EE2312 /* ScreenCaptureGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C460E7F7524B17824CD9DE /* ScreenCaptureGate.swift */; };
+		67CB89CF68694BE29DCE29F8 /* CardCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C89404FC24FC3A00B80BD /* CardCatalog.swift */; };
+		08D9288F94DE466EB4AEB220 /* AdviceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF182C6F8354C16A48C485F /* AdviceEngine.swift */; };
+		3468E51E8E38481D9B6DBA3A /* AdviceFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE0AEAFAE94A3880E0BD94 /* AdviceFeature.swift */; };
+		0F865CA2D2C24D579943739B /* ArenaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F6834DCB0433FA3442171 /* ArenaCard.swift */; };
+		A3D09274A3E447FDB683BEF9 /* ArenaDraftDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C9BBE75DBC486AB26A1E27 /* ArenaDraftDetector.swift */; };
+		153C866E149A47D1A21A2C20 /* ArenaFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D8CA94DAA84F92A0C19EE2 /* ArenaFeature.swift */; };
+		074A1DC00BC34864A0B7FC89 /* ArenaScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D657887D8A1C49DF80A64145 /* ArenaScorer.swift */; };
+		04E0B945A3384EA58C93308A /* TrackerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C8888DED644D1487B3AF3C /* TrackerFeature.swift */; };
+		93032F2D6EB94956A8A5B424 /* AdviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E1279508048B4B810C971 /* AdviceTests.swift */; };
+		37E1398552A746B9BF4C6589 /* ArenaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181D321B8F4C1499643049 /* ArenaTests.swift */; };
+		A3DAA441C5E24EC0A360FFD1 /* DeckTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A402CF4407DA49049AAEB477 /* DeckTrackerTests.swift */; };
+		94D1B83556E149868795FC74 /* LogReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299C074EE334EE0BACB5695 /* LogReaderTests.swift */; };
+		F5D43A1F5FCA41CF8D292391 /* OverlayLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A13B99681474789A06ACF /* OverlayLayoutTests.swift */; };
+		7C999AF444FD44F8B6E44596 /* HSMacOSTrackerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60424191206D4DF2A46E9C01 /* HSMacOSTrackerLib.framework */; };
+		26A89D4947274380939D68C2 /* HSMacOSTrackerLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60424191206D4DF2A46E9C01; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		300585CA146145709E9A2B78 /* HSMacOSTrackerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60424191206D4DF2A46E9C01 /* HSMacOSTrackerLib.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21FC14F3265E4EAEB27466EE /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 908AE17CA8624C39A188FEE6; proxyType = 1; remoteGlobalIDString = 4F666F1E85E84409BC639052; remoteInfo = HSMacOSTrackerLib; };
+		DDEDE4AF4F634554BF882AE8 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 908AE17CA8624C39A188FEE6; proxyType = 1; remoteGlobalIDString = 4F666F1E85E84409BC639052; remoteInfo = HSMacOSTrackerLib; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6FEE87B1D46C404D89865C1F /* HSMacOSTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSMacOSTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60424191206D4DF2A46E9C01 /* HSMacOSTrackerLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HSMacOSTrackerLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25279D9CC2EF40D39DD7431E /* HSMacOSTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSMacOSTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11427C502EAA48AE9DEDFD75 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		D9AB513C08C04774B5B9D732 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		60C741ECEFAD4398B91493C3 /* HSMacOSTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSMacOSTrackerApp.swift; sourceTree = "<group>"; };
+		284E834771974D3A8EEFBB64 /* OverlayPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPanelController.swift; sourceTree = "<group>"; };
+		32E8E02F1AD94C48AF7C20AB /* Deckstring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deckstring.swift; sourceTree = "<group>"; };
+		F2266401D67D4DD3BD6ECFB2 /* DrawOdds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOdds.swift; sourceTree = "<group>"; };
+		77AE51541C40413185D81FC1 /* GameBuildDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuildDetector.swift; sourceTree = "<group>"; };
+		9EB6FAAA54154D42ADE849AD /* GameEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEvent.swift; sourceTree = "<group>"; };
+		6EC993E3A07E4B5EB2B60760 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
+		D5F4AAB49E634740BD521423 /* PowerLogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerLogParser.swift; sourceTree = "<group>"; };
+		CE493651998C4A02BE376A4C /* LogLineBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLineBuffer.swift; sourceTree = "<group>"; };
+		1B4D12B01D164B338A5FBDAE /* LogPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPaths.swift; sourceTree = "<group>"; };
+		0FEAA2D4826D43E7A59EE2BB /* LogTailReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTailReader.swift; sourceTree = "<group>"; };
+		70915570EF2C48C286E10A9A /* MultiLogTailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLogTailService.swift; sourceTree = "<group>"; };
+		288A8402B8FF4248B455F75E /* GameWindowLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWindowLocator.swift; sourceTree = "<group>"; };
+		FF83C9AE19564527976C868C /* OverlayLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLayout.swift; sourceTree = "<group>"; };
+		2FF46E9098C64A9387BAE558 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		300ECD1273304E8089D55B92 /* PublicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicView.swift; sourceTree = "<group>"; };
+		07C460E7F7524B17824CD9DE /* ScreenCaptureGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureGate.swift; sourceTree = "<group>"; };
+		3A8C89404FC24FC3A00B80BD /* CardCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCatalog.swift; sourceTree = "<group>"; };
+		CEF182C6F8354C16A48C485F /* AdviceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceEngine.swift; sourceTree = "<group>"; };
+		58BE0AEAFAE94A3880E0BD94 /* AdviceFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceFeature.swift; sourceTree = "<group>"; };
+		CE4F6834DCB0433FA3442171 /* ArenaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaCard.swift; sourceTree = "<group>"; };
+		B6C9BBE75DBC486AB26A1E27 /* ArenaDraftDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaDraftDetector.swift; sourceTree = "<group>"; };
+		14D8CA94DAA84F92A0C19EE2 /* ArenaFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaFeature.swift; sourceTree = "<group>"; };
+		D657887D8A1C49DF80A64145 /* ArenaScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaScorer.swift; sourceTree = "<group>"; };
+		28C8888DED644D1487B3AF3C /* TrackerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerFeature.swift; sourceTree = "<group>"; };
+		D37E1279508048B4B810C971 /* AdviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceTests.swift; sourceTree = "<group>"; };
+		CF181D321B8F4C1499643049 /* ArenaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaTests.swift; sourceTree = "<group>"; };
+		A402CF4407DA49049AAEB477 /* DeckTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTrackerTests.swift; sourceTree = "<group>"; };
+		6299C074EE334EE0BACB5695 /* LogReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogReaderTests.swift; sourceTree = "<group>"; };
+		238A13B99681474789A06ACF /* OverlayLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLayoutTests.swift; sourceTree = "<group>"; };
+		769E5554BA0B4724ABB3A448 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE4C096741134211A23DCD45 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (7C999AF444FD44F8B6E44596 /* HSMacOSTrackerLib.framework in Frameworks */,); runOnlyForDeploymentPostprocessing = 0; };
+		FB7EC81B7F4E4C91A79E0B34 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		CE29E59C12FE424EAD9C89F0 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (300585CA146145709E9A2B78 /* HSMacOSTrackerLib.framework in Frameworks */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EF333DD9C6A640F487BB0EA1 /* Embed Frameworks */ = {isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 10; files = (26A89D4947274380939D68C2 /* HSMacOSTrackerLib.framework in Embed Frameworks */,); name = "Embed Frameworks"; runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AE86A41CE6A43F184088C50 = {isa = PBXGroup; children = (E83275DDD7164AA69F46260B /* App */, CCD6FE0053F14BB9A13D5304 /* Core */, 30A61BA804CA4456B90559C4 /* Data */, 45B3C695720847A4AECE1F63 /* Features */, 12A507C0F4B142F0BE1E746A /* Resources */, DF490C924AAC4B89BFDA4FCB /* Tests */, ACFFC8D09EBD4EBFA16A116C /* Products */,); sourceTree = "<group>"; };
+		ACFFC8D09EBD4EBFA16A116C /* Products */ = {isa = PBXGroup; children = (6FEE87B1D46C404D89865C1F /* HSMacOSTracker.app */, 60424191206D4DF2A46E9C01 /* HSMacOSTrackerLib.framework */, 25279D9CC2EF40D39DD7431E /* HSMacOSTrackerTests.xctest */,); name = Products; sourceTree = "<group>"; };
+		E83275DDD7164AA69F46260B /* App */ = {isa = PBXGroup; children = (11427C502EAA48AE9DEDFD75 /* AppModel.swift */, D9AB513C08C04774B5B9D732 /* ContentView.swift */, 60C741ECEFAD4398B91493C3 /* HSMacOSTrackerApp.swift */, 284E834771974D3A8EEFBB64 /* OverlayPanelController.swift */,); path = App; sourceTree = "<group>"; };
+		DF490C924AAC4B89BFDA4FCB /* Tests */ = {isa = PBXGroup; children = (D37E1279508048B4B810C971 /* AdviceTests.swift */, CF181D321B8F4C1499643049 /* ArenaTests.swift */, A402CF4407DA49049AAEB477 /* DeckTrackerTests.swift */, 6299C074EE334EE0BACB5695 /* LogReaderTests.swift */, 238A13B99681474789A06ACF /* OverlayLayoutTests.swift */,); path = Tests; sourceTree = "<group>"; };
+		12A507C0F4B142F0BE1E746A /* Resources */ = {isa = PBXGroup; children = (769E5554BA0B4724ABB3A448 /* Info.plist */,); path = Resources; sourceTree = "<group>"; };
+		CCD6FE0053F14BB9A13D5304 /* Core */ = {isa = PBXGroup; children = (A3218B88E2504BD8BABFC0C2 /* Deck */, 64C92B58CACF41B8B2C35AA5 /* GameState */, D113ACC9F7B1430CBADF94D9 /* LogReader */, A12CB68FEB6C4D4EA2AFA3C6 /* Overlay */, 0C9E570180514DB885308F33 /* Visibility */,); path = Core; sourceTree = "<group>"; };
+		30A61BA804CA4456B90559C4 /* Data */ = {isa = PBXGroup; children = (32C5C7751FEB4094B0F7A1A1 /* CardCatalog */,); path = Data; sourceTree = "<group>"; };
+		45B3C695720847A4AECE1F63 /* Features */ = {isa = PBXGroup; children = (470A06C9ADA844BE93B708D0 /* Advice */, 2DDCE615363D45A79ECB217D /* Arena */, 56D91886658545EFAE0DE614 /* Tracker */,); path = Features; sourceTree = "<group>"; };
+		A3218B88E2504BD8BABFC0C2 /* Deck */ = {isa = PBXGroup; children = (32E8E02F1AD94C48AF7C20AB /* Deckstring.swift */,); path = Deck; sourceTree = "<group>"; };
+		64C92B58CACF41B8B2C35AA5 /* GameState */ = {isa = PBXGroup; children = (F2266401D67D4DD3BD6ECFB2 /* DrawOdds.swift */, 77AE51541C40413185D81FC1 /* GameBuildDetector.swift */, 9EB6FAAA54154D42ADE849AD /* GameEvent.swift */, 6EC993E3A07E4B5EB2B60760 /* MatchState.swift */, D5F4AAB49E634740BD521423 /* PowerLogParser.swift */,); path = GameState; sourceTree = "<group>"; };
+		D113ACC9F7B1430CBADF94D9 /* LogReader */ = {isa = PBXGroup; children = (CE493651998C4A02BE376A4C /* LogLineBuffer.swift */, 1B4D12B01D164B338A5FBDAE /* LogPaths.swift */, 0FEAA2D4826D43E7A59EE2BB /* LogTailReader.swift */, 70915570EF2C48C286E10A9A /* MultiLogTailService.swift */,); path = LogReader; sourceTree = "<group>"; };
+		A12CB68FEB6C4D4EA2AFA3C6 /* Overlay */ = {isa = PBXGroup; children = (288A8402B8FF4248B455F75E /* GameWindowLocator.swift */, FF83C9AE19564527976C868C /* OverlayLayout.swift */,); path = Overlay; sourceTree = "<group>"; };
+		0C9E570180514DB885308F33 /* Visibility */ = {isa = PBXGroup; children = (2FF46E9098C64A9387BAE558 /* FeatureFlags.swift */, 300ECD1273304E8089D55B92 /* PublicView.swift */, 07C460E7F7524B17824CD9DE /* ScreenCaptureGate.swift */,); path = Visibility; sourceTree = "<group>"; };
+		32C5C7751FEB4094B0F7A1A1 /* CardCatalog */ = {isa = PBXGroup; children = (3A8C89404FC24FC3A00B80BD /* CardCatalog.swift */,); path = CardCatalog; sourceTree = "<group>"; };
+		470A06C9ADA844BE93B708D0 /* Advice */ = {isa = PBXGroup; children = (CEF182C6F8354C16A48C485F /* AdviceEngine.swift */, 58BE0AEAFAE94A3880E0BD94 /* AdviceFeature.swift */,); path = Advice; sourceTree = "<group>"; };
+		2DDCE615363D45A79ECB217D /* Arena */ = {isa = PBXGroup; children = (CE4F6834DCB0433FA3442171 /* ArenaCard.swift */, B6C9BBE75DBC486AB26A1E27 /* ArenaDraftDetector.swift */, 14D8CA94DAA84F92A0C19EE2 /* ArenaFeature.swift */, D657887D8A1C49DF80A64145 /* ArenaScorer.swift */,); path = Arena; sourceTree = "<group>"; };
+		56D91886658545EFAE0DE614 /* Tracker */ = {isa = PBXGroup; children = (28C8888DED644D1487B3AF3C /* TrackerFeature.swift */,); path = Tracker; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8771714A614A4116A4FDDD1C /* HSMacOSTracker */ = {isa = PBXNativeTarget; buildConfigurationList = 78F4F26A986E483ABAD044DE; buildPhases = (F8C47C1A2FA2451C90837AA3 /* Sources */, AE4C096741134211A23DCD45 /* Frameworks */, 3067B08E3F1C4D73B481917F /* Resources */, EF333DD9C6A640F487BB0EA1 /* Embed Frameworks */,); buildRules = (); dependencies = (00B2866021E54B2DBC256FF4 /* PBXTargetDependency */,); name = HSMacOSTracker; productName = HSMacOSTracker; productReference = 6FEE87B1D46C404D89865C1F; productType = "com.apple.product-type.application"; };
+		4F666F1E85E84409BC639052 /* HSMacOSTrackerLib */ = {isa = PBXNativeTarget; buildConfigurationList = ADD704BDD4994D6582020D6F; buildPhases = (61FB90B987A04B2B85323C40 /* Sources */, FB7EC81B7F4E4C91A79E0B34 /* Frameworks */,); buildRules = (); dependencies = (); name = HSMacOSTrackerLib; productName = HSMacOSTrackerLib; productReference = 60424191206D4DF2A46E9C01; productType = "com.apple.product-type.framework"; };
+		17BA5DED28C44E11A1220921 /* HSMacOSTrackerTests */ = {isa = PBXNativeTarget; buildConfigurationList = F593D43BBD8F4C85AEE9D3B8; buildPhases = (90267AABA4B740598A1322C4 /* Sources */, CE29E59C12FE424EAD9C89F0 /* Frameworks */,); buildRules = (); dependencies = (92AA39F6610241EE86ACD256 /* PBXTargetDependency */,); name = HSMacOSTrackerTests; productName = HSMacOSTrackerTests; productReference = 25279D9CC2EF40D39DD7431E; productType = "com.apple.product-type.bundle.unit-test"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		908AE17CA8624C39A188FEE6 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600;}; buildConfigurationList = A039B7201E214490A970D112; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base,); mainGroup = 4AE86A41CE6A43F184088C50; productRefGroup = ACFFC8D09EBD4EBFA16A116C; projectDirPath = ""; projectRoot = ""; targets = (4F666F1E85E84409BC639052, 8771714A614A4116A4FDDD1C, 17BA5DED28C44E11A1220921,); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3067B08E3F1C4D73B481917F /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8C47C1A2FA2451C90837AA3 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (				43F15CE835CF4B12BEE17884 /* AppModel.swift in Sources */,				ED32654C21724FFB8AF5FE1C /* ContentView.swift in Sources */,				31F4AA527CD24A4D828CBD8E /* HSMacOSTrackerApp.swift in Sources */,				4E729D2C99A447F9BDC80D8D /* OverlayPanelController.swift in Sources */,); runOnlyForDeploymentPostprocessing = 0; };
+		61FB90B987A04B2B85323C40 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (				FA37B7666BCD437EAA7A8164 /* Deckstring.swift in Sources */,				4B8CA4F7FDB945B88603E29D /* DrawOdds.swift in Sources */,				85C60EA5A72444B7BCF784BE /* GameBuildDetector.swift in Sources */,				25B7517F1C65412894D1D904 /* GameEvent.swift in Sources */,				340B182CDB7C457CB24BD4AC /* MatchState.swift in Sources */,				EA1213DB6364493CB1E05D6E /* PowerLogParser.swift in Sources */,				48BDC8D9B6484CEBA1D7B757 /* LogLineBuffer.swift in Sources */,				0C7144A6776C44E8900D0E2A /* LogPaths.swift in Sources */,				0A3F409E1A344EB1AEACA940 /* LogTailReader.swift in Sources */,				F4E2418038AC44099C85578F /* MultiLogTailService.swift in Sources */,				17C0933EB53A4FD39C41ECD5 /* GameWindowLocator.swift in Sources */,				F59B708461264828BDCC6F70 /* OverlayLayout.swift in Sources */,				16FF9A99C8F34497AC6237FD /* FeatureFlags.swift in Sources */,				56263E0F024A4A888EC6F28E /* PublicView.swift in Sources */,				4F30141AA5324FE382EE2312 /* ScreenCaptureGate.swift in Sources */,				67CB89CF68694BE29DCE29F8 /* CardCatalog.swift in Sources */,				08D9288F94DE466EB4AEB220 /* AdviceEngine.swift in Sources */,				3468E51E8E38481D9B6DBA3A /* AdviceFeature.swift in Sources */,				0F865CA2D2C24D579943739B /* ArenaCard.swift in Sources */,				A3D09274A3E447FDB683BEF9 /* ArenaDraftDetector.swift in Sources */,				153C866E149A47D1A21A2C20 /* ArenaFeature.swift in Sources */,				074A1DC00BC34864A0B7FC89 /* ArenaScorer.swift in Sources */,				04E0B945A3384EA58C93308A /* TrackerFeature.swift in Sources */,); runOnlyForDeploymentPostprocessing = 0; };
+		90267AABA4B740598A1322C4 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (				93032F2D6EB94956A8A5B424 /* AdviceTests.swift in Sources */,				37E1398552A746B9BF4C6589 /* ArenaTests.swift in Sources */,				A3DAA441C5E24EC0A360FFD1 /* DeckTrackerTests.swift in Sources */,				94D1B83556E149868795FC74 /* LogReaderTests.swift in Sources */,				F5D43A1F5FCA41CF8D292391 /* OverlayLayoutTests.swift in Sources */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00B2866021E54B2DBC256FF4 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 4F666F1E85E84409BC639052; targetProxy = 21FC14F3265E4EAEB27466EE; };
+		92AA39F6610241EE86ACD256 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 4F666F1E85E84409BC639052; targetProxy = DDEDE4AF4F634554BF882AE8; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E5F67D2303146D1A081E16B /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; MACOSX_DEPLOYMENT_TARGET = 14.0; ONLY_ACTIVE_ARCH = YES; SDKROOT = macosx; SWIFT_VERSION = 6.0;}; name = Debug; };
+		A5CD0ED8F61849819422797E /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; MACOSX_DEPLOYMENT_TARGET = 14.0; SDKROOT = macosx; SWIFT_VERSION = 6.0;}; name = Release; };
+		39F0D535AFAB466098C9F6CB /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_IDENTITY = "-"; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Resources/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks",); MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = io.github.sunmoo.hs-macos-tracker; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES;}; name = Debug; };
+		D6427A9BB2624B3DA645465A /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_IDENTITY = "-"; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Resources/Info.plist; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks",); MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = io.github.sunmoo.hs-macos-tracker; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES;}; name = Release; };
+		78B65A0D3EA3438FA5FF8D91 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_IDENTITY = "-"; COMBINE_HIDPI_IMAGES = YES; CURRENT_PROJECT_VERSION = 1; DEFINES_MODULE = YES; DYLIB_INSTALL_NAME_BASE = "@rpath"; GENERATE_INFOPLIST_FILE = YES; INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks"; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/Frameworks",); MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = io.github.sunmoo.hs-macos-tracker.lib; PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)"; SKIP_INSTALL = YES; SWIFT_EMIT_LOC_STRINGS = NO;}; name = Debug; };
+		4AFF24102F364780930F0218 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_IDENTITY = "-"; COMBINE_HIDPI_IMAGES = YES; CURRENT_PROJECT_VERSION = 1; DEFINES_MODULE = YES; DYLIB_INSTALL_NAME_BASE = "@rpath"; GENERATE_INFOPLIST_FILE = YES; INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks"; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/Frameworks",); MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = io.github.sunmoo.hs-macos-tracker.lib; PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)"; SKIP_INSTALL = YES; SWIFT_EMIT_LOC_STRINGS = NO;}; name = Release; };
+		C9DC5A9873084EF49ED5956C /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_IDENTITY = "-"; GENERATE_INFOPLIST_FILE = YES; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@loader_path/../Frameworks", "@executable_path/../Frameworks",); PRODUCT_BUNDLE_IDENTIFIER = io.github.sunmoo.hs-macos-tracker.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = NO;}; name = Debug; };
+		F3554FFAFF0C470EB71037A1 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_IDENTITY = "-"; GENERATE_INFOPLIST_FILE = YES; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@loader_path/../Frameworks", "@executable_path/../Frameworks",); PRODUCT_BUNDLE_IDENTIFIER = io.github.sunmoo.hs-macos-tracker.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = NO;}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A039B7201E214490A970D112 = {isa = XCConfigurationList; buildConfigurations = (0E5F67D2303146D1A081E16B /* Debug */, A5CD0ED8F61849819422797E /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		78F4F26A986E483ABAD044DE = {isa = XCConfigurationList; buildConfigurations = (39F0D535AFAB466098C9F6CB /* Debug */, D6427A9BB2624B3DA645465A /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		ADD704BDD4994D6582020D6F = {isa = XCConfigurationList; buildConfigurations = (78B65A0D3EA3438FA5FF8D91 /* Debug */, 4AFF24102F364780930F0218 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		F593D43BBD8F4C85AEE9D3B8 = {isa = XCConfigurationList; buildConfigurations = (C9DC5A9873084EF49ED5956C /* Debug */, F3554FFAFF0C470EB71037A1 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 908AE17CA8624C39A188FEE6;
+}

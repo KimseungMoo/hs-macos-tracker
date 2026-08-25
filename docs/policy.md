@@ -19,7 +19,7 @@
 - ScreenCaptureKit + Vision OCR (화면 기록 거부 시 수동 입력으로 동작)
 - 권리와 TTL을 확인한 뒤 adapter 뒤의 Blizzard API / HearthstoneJSON
 
-인플레이 조언은 visibility filter를 통과한 공개 상태만 쓴다.
+인플레이 조언은 visibility filter를 통과한 공개 상태만 쓴다. 확정된 내 덱의 잔여 드로우 확률은 허용한다. 상대 손·덱·비밀 확률과 투기장 미오퍼 풀 확률은 허용하지 않는다.
 
 ## 수익
 
