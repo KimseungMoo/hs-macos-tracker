@@ -17,7 +17,7 @@
 
 네이티브 SwiftUI/AppKit `.app` 빌드는 무료 Xcode가 필요하다. App Store에서 받으면 되고 Apple Developer Program($99)은 로컬 빌드에 필요 없다.
 
-CLT의 `swift build`는 라이브러리/CLI용이다. Electron/Tauri는 Xcode 없이 개발 가능하나 MVP 경로가 아니다.
+CLT의 `swift build`는 라이브러리/CLI용이다. 첫 코드는 `Core/*`를 SwiftPM 패키지로 두고 `swift test`로 검증한다. `App/` SwiftUI·AppKit 타깃은 Xcode 설치 이후로 미룬다. Electron/Tauri는 Xcode 없이 개발 가능하나 MVP 경로가 아니다.
 
 ## 공개·수익 모델
 
@@ -29,27 +29,38 @@ CLT의 `swift build`는 라이브러리/CLI용이다. Electron/Tauri는 Xcode �
 
 ## 최소 아키텍처
 
-- `App/`: SwiftUI 설정·상태 UI와 AppKit 클릭스루 `NSPanel` 오버레이
+- `App/`: SwiftUI 설정·상태 UI와 AppKit 클릭스루 `NSPanel` 오버레이. Xcode 이후.
 - `Core/LogReader/`: `Power.log`, `Arena.log`, `LoadingScreen.log`를 삭제·truncate 없이 읽는 tailer. rotation, 재접속, 부분 라인 처리
 - `Core/GameState/`: typed event와 순수 reducer
-- `Core/Visibility/`: 추천 앞에서 상대 손·덱·비밀 등 비공개 필드 제거
+- `Core/Visibility/`: 추천·UI·저장소 앞에서 비공개 필드 제거
 - `Data/CardCatalog/`: 게임 빌드에 고정한 카드 메타데이터와 로컬 캐시
-- `Features/Tracker/`, `Features/Arena/`, `Features/Advice/`: feature flag로 분리
+- `Features/Tracker/`, `Features/Arena/`, `Features/Advice/`: feature flag로 분리. Release 바이너리에서 Arena·처방형 Advice는 기본 OFF
 
-HSTracker의 MIT 로그 파서·덱스트링·오버레이만 선별 재사용한다. `HearthMirror`, 위험 entitlement, 로그 삭제, GPL Arena Tracker, All Rights Reserved HDT 코드는 가져오지 않는다.
+로그 파일은 읽기 전용이다. 예외로 `~/Library/Preferences/Blizzard/Hearthstone/log.config`에 `[Power]`, `[Arena]`, `[LoadingScreen]`만 merge 생성한다. 기존 섹션(Arena Tracker 등)은 덮어쓰지 않는다. Verbose는 켜지 않는다. 로그는 보통 `/Applications/Hearthstone/Logs/`에 생긴다. 설정 반영에는 HS 재시작이 필요하다.
+
+파서는 원문을 읽는다. Visibility 밖으로 비공개 필드를 보내지 않는다.
+
+- 허용: 내 손, 공개 보드, 공개된 상대 카드
+- 금지: 상대 손·덱·비밀, 미공개 CardID
+- BattleTag, account hi/lo는 섭취 즉시 버림
+
+HSTracker에서 가져오는 것은 MIT 덱스트링과 로그 문법뿐이다. 오버레이는 새로 짠다. `HearthMirror`, 위험 entitlement, 로그 삭제, GPL Arena Tracker, All Rights Reserved HDT 코드는 가져오지 않는다.
 
 ## 구현 단계
 
 1. **기술 스파이크**
-   - 로그 위치·빌드 감지, 읽기 전용 tailing, 창 모드 오버레이
-   - ScreenCaptureKit으로 Hearthstone 창만 선택, Vision OCR로 koKR/enUS 카드명. 화면 기록 거부 시 수동 입력
+   - `log.config` merge, 로그 위치·빌드 감지, 읽기 전용 tailing. 수락은 경로 입증만
+   - 투기장 3장은 수동 입력이 1순위. OCR은 보조. 화면 기록 거부·오인식이면 수동
+   - `App/` 오버레이는 Xcode 이후. 그 전엔 `Core/*`만
 2. **덱 트래커 MVP**
    - 덱 코드 import, 내 덱 잔여, 공개된 상대 카드, 턴·마나·공개 보드
    - 로그 누락·재접속·미지원 빌드는 추정하지 않고 `unknown`
 3. **투기장 덱 추천**
-   - `Arena.log`로 draft/redraft 감지. OCR 또는 수동 입력으로 3장 확정
-   - 외부 비공개 점수 API 대신 로컬 규칙: 기본 가치 + 마나 곡선 + 제거/드로우/생존 + 태그 시너지 + 중복 페널티
+   - `Arena.log`로 draft/redraft 감지. 3장은 수동 확정이 기본. OCR은 고신뢰일 때만
+   - 외부 점수 API 없음. 기본 가치는 로컬 휴리스틱: 코스트, 타입, attack/health, rarity, mechanics, 직업 규칙 테이블. 사용자가 가져온 점수 파일은 허용. 앱이 웹을 긁지 않음
+   - 이 휴리스틱은 2026-08-24 사람이 읽은 웹 티어와 같지 않다
    - 세 카드가 모두 고신뢰일 때만 추천·차선·이유·confidence
+   - 공개 Release 바이너리에서는 승인 전 OFF
 4. **인플레이 실시간 조언**
    - 처음에는 치명타 가능성, 마나 미사용, 공개 위협·제거기 리마인더 같은 결정론적 조언만
    - 처방형(특정 카드·대상·순서)은 flag로 격리. 입력 자동화 없음
@@ -72,13 +83,18 @@ HSTracker의 MIT 로그 파서·덱스트링·오버레이만 선별 재사용�
 
 ## 검증 기준
 
+스파이크: `log.config` merge 후 로그 tail, 수동 3장 입력, Visibility 필터가 경로로 동작하는지만 본다.
+
+MVP·안정화:
+
 - arm64 네이티브. Accessibility·Automation·Full Disk Access 요청 없음
+- Screen Recording은 OCR을 켤 때만 요청. 거부해도 수동 입력으로 동작
 - 로그 rotation·재접속·부분 라인에서 이벤트 손실·중복 0건, 표시 지연 p95 500ms 이하
-- 숨은 엔터티가 UI·추천 입력·저장소로 전달되는 테스트 0건
+- 숨은 엔터티가 UI·추천 입력·저장소·디버그 뷰로 전달되는 테스트 0건
 - OCR fixture에서 잘못된 카드로 추천 0건. 불확실하면 수동 수정 요청
 - 오버레이가 게임 클릭을 막는 사례 0건
 - 미지원 build·손상 데이터팩은 첫 추천 전 fail-closed
-- 기본 로컬 처리. 스크린샷 저장·업로드 없음. 계정 식별자 저장 없음
+- 기본 로컬 처리. 스크린샷 저장·업로드 없음. 계정 식별자는 섭취 즉시 폐기, 저장 없음
 
 ## 후순위
 
